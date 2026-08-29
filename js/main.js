@@ -49,6 +49,9 @@ const sections = ['about','skills','experience','projects','credentials','contac
 const navLinks = document.querySelectorAll('#site-nav a');
 const stages = document.querySelectorAll('.stage');
 
+const pipelineWrap = document.querySelector('.pipeline .wrap');
+let lastActiveStage = null;
+
 function onScroll(){
   const doc = document.documentElement;
   const scrolled = (doc.scrollTop) / (doc.scrollHeight - doc.clientHeight) * 100;
@@ -62,6 +65,15 @@ function onScroll(){
   });
   navLinks.forEach(a=> a.classList.toggle('active', a.dataset.nav===current));
   stages.forEach(s=> s.classList.toggle('active', s.dataset.stage===current));
+
+  if(current !== lastActiveStage){
+    lastActiveStage = current;
+    const activeStage = document.querySelector(`.stage[data-stage="${current}"]`);
+    if(activeStage && pipelineWrap){
+      const target = activeStage.offsetLeft - (pipelineWrap.clientWidth - activeStage.offsetWidth) / 2;
+      pipelineWrap.scrollTo({ left: Math.max(0, target), behavior: reduceMotion ? 'auto' : 'smooth' });
+    }
+  }
 }
 document.addEventListener('scroll', onScroll, {passive:true});
 onScroll();
