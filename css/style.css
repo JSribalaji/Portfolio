@@ -80,6 +80,7 @@
   @keyframes pulse{0%,100%{opacity:1;} 50%{opacity:0.4;}}
   .statusbar nav{display:flex; gap:20px; overflow-x:auto; scrollbar-width:none; -ms-overflow-style:none;}
   .statusbar nav::-webkit-scrollbar{display:none;}
+  .status-short{display:none;}
   .statusbar nav a{text-decoration:none; color:var(--muted); letter-spacing:0.04em; position:relative; padding:4px 0;}
   .statusbar nav a::after{
     content:""; position:absolute; left:0; bottom:0; height:1px; width:0; background:var(--signal);
@@ -307,10 +308,18 @@
   footer .wrap{display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;}
 
   /* ---------- small phones ---------- */
+  @media (max-width:560px){
+    .statusbar .wrap{
+      height:auto; flex-wrap:wrap; row-gap:8px; padding:10px 0; justify-content:flex-start;
+    }
+    .statusbar .wrap > div:first-child{flex:1 1 100%;}
+    .statusbar nav{flex:1 1 100%; gap:16px;}
+    .status-full{display:none;}
+    .status-short{display:inline;}
+    .pipeline{position:static; top:auto;}
+  }
   @media (max-width:480px){
     .wrap{padding:0 16px;}
-    .statusbar .wrap{height:48px; gap:14px;}
-    .statusbar nav{gap:14px;}
     section{padding:64px 0;}
     .hero{padding:96px 0 48px;}
     .hero-desc{font-size:15.5px;}
