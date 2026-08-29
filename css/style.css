@@ -9,8 +9,23 @@
     --signal:#49D98A;
     --signal-dim:rgba(73,217,138,0.15);
     --warn:#F2A93B;
+    --backdrop:rgba(10,17,22,0.75);
     --display: 'Space Grotesk', system-ui, sans-serif;
     --mono: 'JetBrains Mono', ui-monospace, 'Courier New', monospace;
+  }
+
+  :root[data-theme="light"]{
+    --ink:#F4F6F7;
+    --panel:#FFFFFF;
+    --panel-2:#EEF2F3;
+    --line:#DCE3E6;
+    --line-bright:#C2CDD1;
+    --text:#101820;
+    --muted:#5C6B73;
+    --signal:#12A868;
+    --signal-dim:rgba(18,168,104,0.14);
+    --warn:#B9750F;
+    --backdrop:rgba(244,246,247,0.75);
   }
 
   *{box-sizing:border-box; margin:0; padding:0;}
@@ -23,6 +38,7 @@
     -webkit-font-smoothing:antialiased;
     overflow-x:hidden;
     cursor:none;
+    transition:background .35s ease, color .35s ease;
   }
   @media (hover:none){ body{cursor:auto;} }
   @media (prefers-reduced-motion: reduce){
@@ -63,7 +79,7 @@
   /* ---------- top status bar ---------- */
   .statusbar{
     border-bottom:1px solid var(--line);
-    background:rgba(10,17,22,0.75);
+    background:var(--backdrop);
     backdrop-filter:blur(10px);
     position:sticky; top:0; z-index:50;
   }
@@ -90,6 +106,27 @@
   .statusbar nav a:hover::after, .statusbar nav a.active::after{width:100%;}
   .statusbar nav a.active{color:var(--signal);}
 
+  .sb-left{display:flex; align-items:center; gap:10px; min-width:0;}
+  .sb-left span{white-space:nowrap;}
+  .avatar-sm{
+    width:28px; height:28px; border-radius:50%; object-fit:cover; object-position:top center;
+    border:1px solid var(--line-bright); flex-shrink:0;
+  }
+  .sb-right{display:flex; align-items:center; gap:18px;}
+  .sb-right nav{flex:1 1 auto; min-width:0;}
+
+  .theme-toggle{
+    flex-shrink:0; width:30px; height:30px; border-radius:50%;
+    border:1px solid var(--line); background:var(--panel-2); color:var(--muted);
+    display:flex; align-items:center; justify-content:center; cursor:pointer;
+    transition:border-color .2s, color .2s, transform .2s;
+  }
+  .theme-toggle:hover{border-color:var(--signal); color:var(--signal); transform:rotate(12deg);}
+  .theme-toggle svg{width:15px; height:15px;}
+  .theme-toggle .icon-moon{display:none;}
+  :root[data-theme="light"] .theme-toggle .icon-sun{display:none;}
+  :root[data-theme="light"] .theme-toggle .icon-moon{display:block;}
+
   /* scroll progress rail */
   .progress-rail{position:fixed; top:0; left:0; height:2px; background:var(--signal); z-index:60; width:0%; box-shadow:0 0 8px var(--signal);}
 
@@ -98,6 +135,27 @@
   @media (max-height:560px) and (orientation:landscape){
     .hero{min-height:auto; padding:90px 0 50px;}
   }
+  .hero-inner{display:flex; align-items:center; gap:52px;}
+  .hero-text{flex:1; min-width:0;}
+  .hero-avatar{position:relative; flex-shrink:0; width:168px; height:168px;}
+  .hero-avatar img{
+    width:100%; height:100%; border-radius:50%; object-fit:cover; object-position:top center;
+    display:block; border:2px solid var(--line-bright);
+    box-shadow:0 0 0 8px var(--panel), 0 12px 40px rgba(0,0,0,0.35);
+  }
+  .hero-avatar-ring{
+    position:absolute; inset:-8px; border-radius:50%; border:1px solid var(--signal);
+    opacity:0.55; animation:ring-pulse 2.6s ease-in-out infinite;
+  }
+  @keyframes ring-pulse{0%,100%{transform:scale(1); opacity:0.55;} 50%{transform:scale(1.06); opacity:0.15;}}
+  @media (max-width:760px){
+    .hero-inner{flex-direction:column; text-align:center; gap:28px;}
+    .hero-avatar{width:128px; height:128px;}
+    .eyebrow{justify-content:center;}
+    h1{max-width:none;}
+    .hero-cta{justify-content:center;}
+  }
+
   .eyebrow{
     font-family:var(--mono); font-size:13px; color:var(--signal);
     letter-spacing:0.08em; margin-bottom:18px; display:flex; align-items:center; gap:10px;
@@ -308,8 +366,9 @@
     .statusbar .wrap{
       height:auto; flex-wrap:wrap; row-gap:8px; padding:10px 0; justify-content:flex-start;
     }
-    .statusbar .wrap > div:first-child{flex:1 1 100%;}
-    .statusbar nav{flex:1 1 100%; gap:16px;}
+    .statusbar .wrap > .sb-left{flex:1 1 100%;}
+    .statusbar .wrap > .sb-right{flex:1 1 100%; justify-content:space-between;}
+    .statusbar nav{gap:16px;}
     .status-full{display:none;}
     .status-short{display:inline;}
   }

@@ -1,5 +1,30 @@
 document.getElementById('year').textContent = new Date().getFullYear();
 
+/* ---------- theme toggle (light/dark) ---------- */
+(function initTheme(){
+  const root = document.documentElement;
+  const btn = document.getElementById('theme-toggle');
+  let saved = null;
+  try{ saved = localStorage.getItem('theme'); }catch(e){}
+  const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+  const initial = saved || (prefersLight ? 'light' : 'dark');
+  applyTheme(initial);
+
+  function applyTheme(theme){
+    if(theme === 'light'){ root.setAttribute('data-theme','light'); }
+    else{ root.removeAttribute('data-theme'); }
+    if(btn){ btn.setAttribute('aria-label', theme==='light' ? 'Switch to dark mode' : 'Switch to light mode'); }
+  }
+  if(btn){
+    btn.addEventListener('click', ()=>{
+      const isLight = root.getAttribute('data-theme') === 'light';
+      const next = isLight ? 'dark' : 'light';
+      applyTheme(next);
+      try{ localStorage.setItem('theme', next); }catch(e){}
+    });
+  }
+})();
+
 /* ---------- respect reduced motion ---------- */
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -37,7 +62,7 @@ if(!reduceMotion && matchMedia('(hover:hover)').matches){
     requestAnimationFrame(loop);
   }
   loop();
-  document.querySelectorAll('a, .chip, .project, .stat-card, .commit-body, .cred-card').forEach(el=>{
+  document.querySelectorAll('a, button, .chip, .project, .stat-card, .commit-body, .cred-card').forEach(el=>{
     el.addEventListener('mouseenter', ()=>{ cursor.classList.add('grow'); ring.classList.add('grow'); });
     el.addEventListener('mouseleave', ()=>{ cursor.classList.remove('grow'); ring.classList.remove('grow'); });
   });

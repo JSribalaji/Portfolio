@@ -6,9 +6,14 @@ A multi-file static portfolio site (HTML/CSS/JS, no build step, no framework).
 site/
 ├── index.html      # page structure & content
 ├── css/
-│   └── style.css   # all styling (design tokens, layout, animations)
+│   └── style.css   # all styling (design tokens, layout, animations, light/dark theme)
 ├── js/
-│   └── main.js     # typing effect, cursor, scroll tracking, canvas background, tilt cards
+│   └── main.js     # typing effect, cursor, scroll tracking, canvas background, tilt cards, theme toggle
+├── assets/
+│   └── img/
+│       ├── avatar.jpg        # profile photo (hero + nav)
+│       ├── favicon.png       # 192x192 favicon / apple touch icon
+│       └── favicon-32.png    # 32x32 favicon
 └── README.md
 ```
 
