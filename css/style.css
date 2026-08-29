@@ -78,7 +78,8 @@
     animation:pulse 2.4s ease-in-out infinite;
   }
   @keyframes pulse{0%,100%{opacity:1;} 50%{opacity:0.4;}}
-  .statusbar nav{display:flex; gap:20px;}
+  .statusbar nav{display:flex; gap:20px; overflow-x:auto; scrollbar-width:none; -ms-overflow-style:none;}
+  .statusbar nav::-webkit-scrollbar{display:none;}
   .statusbar nav a{text-decoration:none; color:var(--muted); letter-spacing:0.04em; position:relative; padding:4px 0;}
   .statusbar nav a::after{
     content:""; position:absolute; left:0; bottom:0; height:1px; width:0; background:var(--signal);
@@ -93,6 +94,9 @@
 
   /* ---------- hero ---------- */
   .hero{padding:110px 0 70px; min-height:82vh; display:flex; align-items:center;}
+  @media (max-height:560px) and (orientation:landscape){
+    .hero{min-height:auto; padding:90px 0 50px;}
+  }
   .eyebrow{
     font-family:var(--mono); font-size:13px; color:var(--signal);
     letter-spacing:0.08em; margin-bottom:18px; display:flex; align-items:center; gap:10px;
@@ -301,3 +305,41 @@
 
   footer{border-top:1px solid var(--line); padding:26px 0; font-family:var(--mono); font-size:12px; color:var(--muted);}
   footer .wrap{display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;}
+
+  /* ---------- small phones ---------- */
+  @media (max-width:480px){
+    .wrap{padding:0 16px;}
+    .statusbar .wrap{height:48px; gap:14px;}
+    .statusbar nav{gap:14px;}
+    section{padding:64px 0;}
+    .hero{padding:96px 0 48px;}
+    .hero-desc{font-size:15.5px;}
+    .btn{padding:11px 16px; font-size:12px;}
+    .pipeline{padding:20px 0;}
+    .project{padding:22px;}
+    .commit-body{padding:20px 18px;}
+    .gitlog{padding-left:26px;}
+    .gitlog-line{left:4px;}
+    .commit-dot{left:-26px; width:9px; height:9px;}
+    .contact-card{padding:26px;}
+    .cred-card{padding:18px;}
+    footer .wrap{flex-direction:column; gap:6px;}
+  }
+  @media (max-width:360px){
+    h1{font-size:32px;}
+    .stat-card .n{font-size:21px;}
+  }
+
+  /* ---------- large screens / TV ---------- */
+  @media (min-width:1600px){
+    .wrap{max-width:1240px;}
+    body{font-size:18px;}
+    h1{font-size:clamp(56px, 5.5vw, 84px);}
+    .hero-desc{font-size:19px; max-width:62ch;}
+    .section-title{font-size:clamp(30px, 2.6vw, 40px);}
+    section{padding:130px 0;}
+  }
+  @media (min-width:2200px){
+    .wrap{max-width:1440px;}
+    body{font-size:20px;}
+  }
