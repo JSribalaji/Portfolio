@@ -143,7 +143,7 @@
 
   /* ---------- pipeline strip (sticky progress through sections) ---------- */
   .pipeline{
-    padding:28px 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+    padding:22px 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line);
     background:var(--panel); position:sticky; top:52px; z-index:40;
   }
   .pipeline .wrap{
@@ -152,36 +152,33 @@
   }
   .pipeline .wrap::-webkit-scrollbar{display:none;}
   .stage{
-    flex:1; min-width:150px; padding:0 22px; position:relative;
+    flex:1 0 auto; min-width:150px; padding:8px 22px; position:relative;
     font-family:var(--mono); font-size:12px; color:var(--muted);
     display:flex; flex-direction:column; gap:6px; justify-content:center;
-    transition:color .3s;
+    border-bottom:2px solid transparent; transition:color .3s, border-color .3s;
   }
   .stage:not(:last-child)::after{
     content:"→"; position:absolute; right:-2px; top:50%; transform:translateY(-50%);
     color:var(--line); font-size:14px;
   }
-  @media (max-width:900px){
-    .pipeline .wrap{
-      display:grid; grid-template-columns:repeat(3, 1fr); overflow-x:visible; row-gap:22px;
-    }
-    .stage{min-width:0; padding:0 14px; border-left:1px solid var(--line);}
-    .stage:nth-child(3n+1){border-left:none;}
-    .stage:not(:last-child)::after{display:none;}
-    .stage.active::before{bottom:-11px;}
-  }
-  @media (max-width:560px){
-    .pipeline .wrap{grid-template-columns:repeat(2, 1fr);}
-    .stage:nth-child(3n+1){border-left:1px solid var(--line);}
-    .stage:nth-child(2n+1){border-left:none;}
-  }
-  .stage .label{color:var(--text); font-weight:700; font-size:13px; letter-spacing:0.03em; transition:color .3s;}
-  .stage .state{color:var(--muted); transition:color .3s;}
+  .stage .label{color:var(--text); font-weight:700; font-size:13px; letter-spacing:0.03em; transition:color .3s; white-space:nowrap;}
+  .stage .state{color:var(--muted); transition:color .3s; white-space:nowrap;}
   .stage.active .label{color:var(--signal);}
   .stage.active .state{color:var(--signal);}
-  .stage.active::before{
-    content:""; position:absolute; left:0; bottom:-28px; width:100%; height:2px; background:var(--signal);
-    box-shadow:0 0 8px var(--signal);
+  .stage.active{border-bottom-color:var(--signal); box-shadow:0 2px 8px -2px var(--signal-dim);}
+
+  @media (max-width:760px){
+    .pipeline{padding:12px 0;}
+    .pipeline .wrap{gap:8px;}
+    .stage{
+      flex:0 0 auto; min-width:0; padding:8px 16px; gap:0;
+      flex-direction:row; align-items:center; justify-content:center;
+      border:1px solid var(--line); border-radius:20px; background:var(--panel-2);
+    }
+    .stage .state{display:none;}
+    .stage .label{font-size:11.5px;}
+    .stage:not(:last-child)::after{display:none;}
+    .stage.active{border-color:var(--signal); background:var(--signal-dim); box-shadow:none;}
   }
 
   /* ---------- sections ---------- */
@@ -324,7 +321,6 @@
     .hero{padding:96px 0 48px;}
     .hero-desc{font-size:15.5px;}
     .btn{padding:11px 16px; font-size:12px;}
-    .pipeline{padding:20px 0;}
     .project{padding:22px;}
     .commit-body{padding:20px 18px;}
     .gitlog{padding-left:26px;}
