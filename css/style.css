@@ -144,7 +144,7 @@
   /* ---------- pipeline strip (sticky progress through sections) ---------- */
   .pipeline{
     padding:22px 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line);
-    background:var(--panel); position:sticky; top:52px; z-index:40;
+    background:var(--panel); position:sticky; top:var(--sb-h, 52px); z-index:40;
   }
   .pipeline .wrap{
     display:flex; align-items:stretch; gap:0; overflow-x:auto;
@@ -313,7 +313,6 @@
     .statusbar nav{flex:1 1 100%; gap:16px;}
     .status-full{display:none;}
     .status-short{display:inline;}
-    .pipeline{position:static; top:auto;}
   }
   @media (max-width:480px){
     .wrap{padding:0 16px;}

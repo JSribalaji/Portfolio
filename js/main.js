@@ -141,3 +141,15 @@ function drawBG(){
   if(!reduceMotion) requestAnimationFrame(drawBG);
 }
 drawBG();
+
+/* ---------- keep pipeline flush under the status bar (its height varies on mobile) ---------- */
+const statusbarEl = document.querySelector('.statusbar');
+function syncStatusbarHeight(){
+  if(statusbarEl){
+    document.documentElement.style.setProperty('--sb-h', statusbarEl.offsetHeight + 'px');
+  }
+}
+syncStatusbarHeight();
+window.addEventListener('resize', syncStatusbarHeight);
+window.addEventListener('orientationchange', syncStatusbarHeight);
+if(document.fonts && document.fonts.ready){ document.fonts.ready.then(syncStatusbarHeight); }
