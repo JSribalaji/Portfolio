@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sri Balaji — System Engineer, Backend & Batch Systems</title>
+<meta name="description" content="Sri Balaji — System Engineer at TCS specializing in Java, Spring Boot, Spring Batch, and cloud-native delivery pipelines.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<canvas id="bg-canvas"></canvas>
+<div class="grain"></div>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursor-ring"></div>
+<div class="progress-rail" id="progress-rail"></div>
+
+<div class="statusbar">
+  <div class="wrap">
+    <div><span class="dot"></span>SYSTEM: available for work</div>
+    <nav id="site-nav">
+      <a href="#about" data-nav="about">about</a>
+      <a href="#skills" data-nav="skills">skills</a>
+      <a href="#experience" data-nav="experience">experience</a>
+      <a href="#projects" data-nav="projects">projects</a>
+      <a href="#credentials" data-nav="credentials">credentials</a>
+      <a href="#contact" data-nav="contact">contact</a>
+    </nav>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">whoami<span class="caret"></span></div>
+    <h1>Sri Balaji<span class="role" id="type-role"></span></h1>
+    <p class="hero-desc">
+      System Engineer at <strong>Tata Consultancy Services</strong>, building
+      <strong>REST API microservices and high-throughput batch pipelines</strong> for
+      Citibank's Credit Decision Engine and Payment Float Manager platforms. I work
+      across the full delivery path — Java and Spring on one end, Docker/Kubernetes/OpenShift
+      CI/CD on the other. Based in Tamil Nadu, India.
+    </p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="#projects">View projects</a>
+      <a class="btn btn-ghost" href="#contact">Get in touch</a>
+    </div>
+  </div>
+</header>
+
+<div class="pipeline">
+  <div class="wrap">
+    <div class="stage" data-stage="about"><span class="label">01 · BUILD</span><span class="state">who I am</span></div>
+    <div class="stage" data-stage="skills"><span class="label">02 · TEST</span><span class="state">what I use</span></div>
+    <div class="stage" data-stage="experience"><span class="label">03 · INTEGRATE</span><span class="state">where I've worked</span></div>
+    <div class="stage" data-stage="projects"><span class="label">04 · DEPLOY</span><span class="state">what I've shipped</span></div>
+    <div class="stage" data-stage="credentials"><span class="label">05 · RELEASE</span><span class="state">degrees & awards</span></div>
+    <div class="stage" data-stage="contact"><span class="label">06 · MONITOR</span><span class="state">reach me</span></div>
+  </div>
+</div>
+
+<section id="about">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="section-tag">01 · BUILD</div>
+      <h2 class="section-title">About</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p>
+          I'm a backend developer working primarily in <strong>Java and Spring Boot</strong>,
+          with a focus on services that need to be reliable, observable, and easy to hand
+          off — batch pipelines, integrations, and internal tools built with
+          <strong>Spring Batch</strong>, <strong>MongoDB</strong>, and <strong>Oracle SQL</strong>.
+        </p>
+        <p>
+          Day to day that means owning the whole path from code to production: containerizing
+          services with <strong>Docker</strong>, deploying on <strong>Kubernetes</strong> and
+          <strong>OpenShift</strong>, and wiring up delivery through <strong>Jenkins</strong> and
+          <strong>Harness</strong>, with <strong>Splunk</strong> and <strong>SonarQube</strong>
+          keeping an eye on quality and runtime health.
+        </p>
+        <p>
+          Outside of work I take that same build-it-end-to-end approach into personal
+          projects — a desktop app that talks to lab instrumentation over serial, and a
+          from-scratch embedded monitor for my motorcycle.
+        </p>
+      </div>
+      <div class="about-stack reveal">
+        <div class="stat-card">
+          <div class="n">Java · Spring Boot</div>
+          <div class="l">Primary language & framework</div>
+        </div>
+        <div class="stat-card">
+          <div class="n">Docker · K8s · OpenShift</div>
+          <div class="l">Where the services run</div>
+        </div>
+        <div class="stat-card">
+          <div class="n">Jenkins · Harness</div>
+          <div class="l">How they get there</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="section-tag">02 · TEST</div>
+      <h2 class="section-title">Skills &amp; tooling</h2>
+      <p class="section-sub">The stack I reach for, grouped by where it sits in the pipeline.</p>
+    </div>
+    <div class="skill-groups">
+      <div class="skill-card reveal">
+        <div class="head"><h3>Languages</h3><span class="tag">core</span></div>
+        <div class="chips">
+          <span class="chip">Java</span>
+          <span class="chip">SQL</span>
+          <span class="chip">JavaScript</span>
+          <span class="chip">UNIX Shell Scripting</span>
+          <span class="chip">React JS (basics)</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="head"><h3>Backend &amp; Data</h3><span class="tag">services</span></div>
+        <div class="chips">
+          <span class="chip">Spring Boot</span>
+          <span class="chip">Spring Batch</span>
+          <span class="chip">Spring Framework</span>
+          <span class="chip">REST APIs</span>
+          <span class="chip">Apache Kafka</span>
+          <span class="chip">MongoDB</span>
+          <span class="chip">Oracle SQL Developer</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="head"><h3>Platform &amp; Delivery</h3><span class="tag">ops</span></div>
+        <div class="chips">
+          <span class="chip">Docker</span>
+          <span class="chip">Kubernetes</span>
+          <span class="chip">OpenShift</span>
+          <span class="chip">Jenkins</span>
+          <span class="chip">Harness</span>
+          <span class="chip">Linux</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="head"><h3>Testing &amp; Quality</h3><span class="tag">verify</span></div>
+        <div class="chips">
+          <span class="chip">Cucumber (BDD)</span>
+          <span class="chip">JUnit</span>
+          <span class="chip">SonarQube</span>
+          <span class="chip">Splunk</span>
+          <span class="chip">SoapUI</span>
+          <span class="chip">Postman</span>
+          <span class="chip">Swagger</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="head"><h3>AI-Assisted Dev</h3><span class="tag">2024+</span></div>
+        <div class="chips">
+          <span class="chip">Devin</span>
+          <span class="chip">GitHub Copilot</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="head"><h3>Workflow</h3><span class="tag">process</span></div>
+        <div class="chips">
+          <span class="chip">Git</span>
+          <span class="chip">JIRA</span>
+          <span class="chip">Confluence</span>
+          <span class="chip">Agile / Scrum</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="section-tag">03 · INTEGRATE</div>
+      <h2 class="section-title">Experience</h2>
+      <p class="section-sub">A commit log of where I've worked — most recent at the top.</p>
+    </div>
+
+    <div class="gitlog">
+      <div class="gitlog-line"></div>
+
+      <div class="commit reveal">
+        <div class="commit-dot"></div>
+        <div class="commit-body">
+          <div class="commit-top">
+            <h3>Credit Decision Engine (CDE) — Credit Initiation</h3>
+            <span class="commit-date">Mar 2026 – Present</span>
+          </div>
+          <div class="commit-org">Tata Consultancy Services · Client: Citibank N.A., Chennai</div>
+          <ul class="commit-notes">
+            <li>Built REST API microservices and batch workflows for the Credit Decision Engine.</li>
+            <li>Designed high-throughput batch ingestion pipelines to parse ABD files for automated credit decisioning and policy validation.</li>
+            <li>Integrated secure REST APIs orchestrating real-time calls to underwriting, verification, and account-initiation services.</li>
+            <li>Used Devin and GitHub Copilot to speed up feature work and raise automated test coverage.</li>
+          </ul>
+          <div class="stack">
+            <span class="chip">Java</span><span class="chip">Spring Boot</span><span class="chip">Spring Batch</span>
+            <span class="chip">Microservices</span><span class="chip">Oracle SQL Developer</span>
+            <span class="chip">OpenShift</span><span class="chip">Jenkins</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="commit reveal">
+        <div class="commit-dot"></div>
+        <div class="commit-body">
+          <div class="commit-top">
+            <h3>Citi Payment Float Manager (CPFM) — Modernization &amp; Batch Optimization</h3>
+            <span class="commit-date">Oct 2024 – Feb 2026</span>
+          </div>
+          <div class="commit-org">Tata Consultancy Services · Client: Citibank N.A., Chennai</div>
+          <ul class="commit-notes">
+            <li>Delivered a POC migrating legacy jobs to Spring Batch — won the TCS Special Initiative Award.</li>
+            <li>Cut batch runtime from 2.5 hours to 1 hour (60% faster) by optimizing job workflows and query plans.</li>
+            <li>Automated end-to-end CPFM validation with BDD (Cucumber + JUnit), reducing manual sprint validation.</li>
+            <li>Built operational monitoring views in ReactJS and set up CI/CD via Docker, Kubernetes, OpenShift, Jenkins, and Harness.</li>
+          </ul>
+          <div class="stack">
+            <span class="chip">Java</span><span class="chip">Spring Batch</span><span class="chip">ReactJS</span>
+            <span class="chip">Cucumber</span><span class="chip">JUnit</span><span class="chip">Docker</span>
+            <span class="chip">Kubernetes</span><span class="chip">Harness</span><span class="chip">Splunk</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="commit reveal">
+        <div class="commit-dot"></div>
+        <div class="commit-body">
+          <div class="commit-top">
+            <h3>Citi Payment Float Manager (CPFM) — Core Risk &amp; Ingestion Engine</h3>
+            <span class="commit-date">Dec 2023 – Oct 2024</span>
+          </div>
+          <div class="commit-org">Tata Consultancy Services · Client: Citibank N.A., Chennai</div>
+          <ul class="commit-notes">
+            <li>Built a core compliance app (Spring Framework) flagging risk transactions from Kafka and file feeds.</li>
+            <li>Designed transaction evaluation strategies enabling automated float and float-expiry computation.</li>
+            <li>Worked with Enterprise Architecture on data-exchange design with ETL and First Party Data systems.</li>
+            <li>Wrote release documentation, ran code reviews, and mentored junior engineers on quality standards.</li>
+          </ul>
+          <div class="stack">
+            <span class="chip">Java</span><span class="chip">Spring Boot</span><span class="chip">Apache Kafka</span>
+            <span class="chip">MongoDB</span><span class="chip">Oracle SQL</span><span class="chip">REST APIs</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="commit reveal">
+        <div class="commit-dot dim"></div>
+        <div class="commit-body">
+          <div class="commit-top">
+            <h3>Software Developer Intern</h3>
+            <span class="commit-date">May 2022 – Jul 2022</span>
+          </div>
+          <div class="commit-org">Open Weaver · Chennai, Tamil Nadu (Remote)</div>
+          <ul class="commit-notes">
+            <li>Developed and published reusable use-case kits on the Kandi platform.</li>
+            <li>Delivered live bootcamp sessions on web development and design for the developer community.</li>
+          </ul>
+          <div class="stack">
+            <span class="chip">Python</span><span class="chip">Machine Learning</span><span class="chip">Git</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="commit reveal">
+        <div class="commit-dot dim"></div>
+        <div class="commit-body">
+          <div class="commit-top">
+            <h3>IoT Intern</h3>
+            <span class="commit-date">Jun 2021 – Jul 2021</span>
+          </div>
+          <div class="commit-org">SmartInternz × IBM · Chennai, Tamil Nadu (Remote)</div>
+          <ul class="commit-notes">
+            <li>Built an Automatic Pet Feeder integrated with IBM Cloud for remote monitoring and feeding.</li>
+            <li>Built a chatbot and mobile app with MIT App Inventor 2 for interactive, real-time updates.</li>
+          </ul>
+          <div class="stack">
+            <span class="chip">IBM Cloud</span><span class="chip">Node-RED</span><span class="chip">IoT</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="section-tag">04 · DEPLOY</div>
+      <h2 class="section-title">Projects</h2>
+      <p class="section-sub">Personal builds outside of work — one desktop application, one embedded systems project.</p>
+    </div>
+
+    <div class="project reveal" data-tilt>
+      <div class="top">
+        <h3>DPI 104 Pressure Gauge Desktop App</h3>
+        <span class="status">shipped</span>
+      </div>
+      <p class="desc">
+        A Windows desktop application for communicating with a <strong>DPI 104 pressure
+        gauge</strong> over <strong>RS-232 serial</strong>. <strong>Java backend</strong> with
+        a <strong>Flutter</strong> frontend, generating PDF calibration reports and storing
+        data to local files with no external database. Ships with separate
+        <strong>Admin and User modes</strong> and a MAC-address-based device-binding
+        licensing mechanism.
+      </p>
+      <div class="stack">
+        <span class="chip">Java</span>
+        <span class="chip">Flutter</span>
+        <span class="chip">RS-232</span>
+        <span class="chip">PDF generation</span>
+        <span class="chip">Licensing</span>
+      </div>
+    </div>
+
+    <div class="project reveal" data-tilt>
+      <div class="top">
+        <h3>RTR 200 Smart Monitor</h3>
+        <span class="status">in progress</span>
+      </div>
+      <p class="desc">
+        A standalone <strong>ESP32-based</strong> engine and battery monitor for a
+        2022 TVS Apache RTR 200 4V motorcycle — <strong>monitoring only, no ECU
+        control</strong>. Tracks voltage, current, oil temperature, and RPM through a
+        TFT display, with <strong>2-point NVS calibration</strong>, EMA-filtered
+        readings, consecutive-sample fault detection, and a hardware watchdog for
+        reliability on a moving vehicle.
+      </p>
+      <div class="stack">
+        <span class="chip">ESP32</span>
+        <span class="chip">C++ / Arduino</span>
+        <span class="chip">TFT_eSPI</span>
+        <span class="chip">Sensor calibration</span>
+        <span class="chip">Fault detection</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="credentials">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="section-tag">05 · RELEASE</div>
+      <h2 class="section-title">Education, certification &amp; awards</h2>
+    </div>
+    <div class="cred-grid">
+      <div class="cred-card reveal">
+        <div class="k">EDUCATION</div>
+        <h3>B.Tech, Electronics &amp; Communication</h3>
+        <div class="org">Vellore Institute of Technology</div>
+        <div class="when">Jul 2019 – Apr 2023</div>
+      </div>
+      <div class="cred-card reveal">
+        <div class="k">CERTIFICATION</div>
+        <h3>Oracle Certified Associate</h3>
+        <div class="org">Java SE 8 Programmer</div>
+        <div class="when">May 2024</div>
+      </div>
+      <div class="cred-card reveal">
+        <div class="k">AWARD</div>
+        <h3>Special Initiative Award</h3>
+        <div class="org">TCS</div>
+        <p class="blurb">For the Spring Batch migration POC — innovation &amp; technical excellence.</p>
+      </div>
+      <div class="cred-card reveal">
+        <div class="k">AWARD</div>
+        <h3>On the Spot Award</h3>
+        <div class="org">TCS · Awards for Excellence</div>
+        <p class="blurb">Outstanding project contribution and delivery impact.</p>
+      </div>
+      <div class="cred-card reveal">
+        <div class="k">AWARD</div>
+        <h3>Best Employee Award</h3>
+        <div class="org">TCS</div>
+        <p class="blurb">Consistent high performance, reliability, and team leadership.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="section-tag">06 · MONITOR</div>
+      <h2 class="section-title">Get in touch</h2>
+    </div>
+    <div class="contact-card reveal">
+      <div>
+        <h3>Let's talk shop.</h3>
+        <p>Open to backend and platform engineering roles — happiest working close to the
+        Java/Spring stack and the pipeline that ships it.</p>
+      </div>
+      <div class="contact-links">
+        <a href="mailto:sribalaji581@gmail.com"><span class="k">email</span> sribalaji581@gmail.com</a>
+        <a href="tel:+918056690736"><span class="k">phone</span> +91 80566 90736</a>
+        <a href="https://www.linkedin.com/in/sribalaji0312/" target="_blank" rel="noopener"><span class="k">linkedin</span> linkedin.com/in/sribalaji0312</a>
+        <a href="https://github.com/JSribalaji" target="_blank" rel="noopener"><span class="k">github</span> github.com/JSribalaji</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="year"></span> Sribalaji J</span>
+    <span>build passing · deployed via GitHub Pages</span>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+
+</body>
+</html>
