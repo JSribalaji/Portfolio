@@ -6,8 +6,8 @@ document.getElementById('year').textContent = new Date().getFullYear();
   const btn = document.getElementById('theme-toggle');
   let saved = null;
   try{ saved = localStorage.getItem('theme'); }catch(e){}
-  const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
-  const initial = saved || (prefersLight ? 'light' : 'dark');
+  // Default to dark on first visit; only honour an explicit saved choice.
+  const initial = saved === 'light' ? 'light' : 'dark';
   applyTheme(initial);
 
   function applyTheme(theme){
