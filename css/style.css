@@ -331,44 +331,18 @@
   .commit-notes li::before{content:"+"; position:absolute; left:0; color:var(--signal); font-family:var(--mono); font-weight:700;}
   .commit .stack{display:flex; flex-wrap:wrap; gap:8px;}
 
-  /* credentials — auto-scrolling marquee rows, all sharing one consistent frame width */
+  /* credentials — static bordered card grid, grouped by type */
   .cred-category{margin-bottom:26px;}
   .cred-category:last-child{margin-bottom:0;}
   .cred-cat-title{
     font-family:var(--mono); font-size:12.5px; color:var(--muted); letter-spacing:0.08em;
     text-transform:uppercase; margin-bottom:12px;
   }
-  .marquee-frame{
-    border:1px solid var(--line); border-radius:12px; background:var(--panel);
-    overflow:hidden; position:relative;
-  }
-  .marquee{
-    overflow:hidden; position:relative;
-  }
-  .marquee::before, .marquee::after{
-    content:""; position:absolute; top:0; bottom:0; width:56px; z-index:2; pointer-events:none;
-  }
-  .marquee::before{left:0; background:linear-gradient(90deg, var(--panel), transparent);}
-  .marquee::after{right:0; background:linear-gradient(270deg, var(--panel), transparent);}
-  .marquee-track{
-    display:flex; align-items:stretch; gap:16px; width:max-content;
-    padding:20px 18px;
-    animation:marquee-scroll 26s linear infinite;
-  }
-  .marquee-reverse .marquee-track{animation-direction:reverse; animation-duration:32s;}
-  .marquee:hover .marquee-track, .marquee:focus-within .marquee-track{animation-play-state:paused;}
-  @keyframes marquee-scroll{ from{transform:translateX(0);} to{transform:translateX(-50%);} }
-  @media (prefers-reduced-motion: reduce){
-    .marquee-track{animation:none;}
-    .marquee{overflow-x:auto;}
-  }
-  @media (max-width:560px){
-    .marquee-track{padding:16px 14px; gap:12px;}
-    .marquee::before, .marquee::after{width:28px;}
+  .cred-grid{
+    display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:16px;
   }
 
   .cred-card{
-    flex:0 0 auto; width:280px;
     border:1px solid var(--line); background:var(--panel); border-radius:10px; padding:24px;
     transition:border-color .25s, transform .25s;
   }
@@ -418,7 +392,7 @@
     .gitlog-line{left:4px;}
     .commit-dot{left:-26px; width:9px; height:9px;}
     .contact-card{padding:26px;}
-    .cred-card{padding:18px; width:230px;}
+    .cred-card{padding:18px;}
     footer .wrap{flex-direction:column; gap:6px;}
   }
   @media (max-width:360px){
