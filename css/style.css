@@ -115,7 +115,7 @@
   .sb-left{display:flex; align-items:center; gap:10px; min-width:0;}
   .sb-left span{white-space:nowrap;}
   .avatar-sm{
-    width:28px; height:28px; border-radius:50%; object-fit:cover; object-position:top center;
+    width:28px; height:28px; border-radius:7px;
     border:1px solid var(--line-bright); flex-shrink:0;
   }
   .sb-right{display:flex; align-items:center; gap:18px; min-width:0;}
