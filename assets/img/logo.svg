@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Sri Balaji">
+  <rect width="64" height="64" rx="14" fill="#0A1116"/>
+  <g fill="#49D98A">
+    <rect x="28.5" y="7" width="7" height="15" rx="1.6"/>
+    <rect x="28.5" y="42" width="7" height="15" rx="1.6"/>
+    <rect x="28.5" y="7" width="7" height="15" rx="1.6" transform="rotate(60 32 32)"/>
+    <rect x="28.5" y="42" width="7" height="15" rx="1.6" transform="rotate(60 32 32)"/>
+    <rect x="28.5" y="7" width="7" height="15" rx="1.6" transform="rotate(120 32 32)"/>
+    <rect x="28.5" y="42" width="7" height="15" rx="1.6" transform="rotate(120 32 32)"/>
+    <circle cx="32" cy="32" r="15.5"/>
+  </g>
+  <circle cx="32" cy="32" r="6.2" fill="#0A1116"/>
+  <circle cx="32" cy="32" r="2.4" fill="#49D98A"/>
+</svg>
