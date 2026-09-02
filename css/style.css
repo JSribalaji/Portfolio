@@ -332,7 +332,7 @@
   .commit .stack{display:flex; flex-wrap:wrap; gap:8px;}
 
   /* credentials — auto-scrolling marquee rows */
-  .cred-category{margin-bottom:34px;}
+  .cred-category{margin-bottom:30px;}
   .cred-category:last-child{margin-bottom:0;}
   .cred-cat-title{
     font-family:var(--mono); font-size:12.5px; color:var(--muted); letter-spacing:0.08em;
@@ -340,11 +340,14 @@
   }
   .marquee{
     overflow:hidden; position:relative; width:100vw; left:50%; margin-left:-50vw;
-    -webkit-mask-image:linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
-    mask-image:linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
   }
+  .marquee::before, .marquee::after{
+    content:""; position:absolute; top:0; bottom:0; width:64px; z-index:2; pointer-events:none;
+  }
+  .marquee::before{left:0; background:linear-gradient(90deg, var(--ink) 15%, transparent);}
+  .marquee::after{right:0; background:linear-gradient(270deg, var(--ink) 15%, transparent);}
   .marquee-track{
-    display:flex; gap:18px; width:max-content;
+    display:flex; align-items:stretch; gap:18px; width:max-content;
     padding:2px calc(50vw - 520px + 24px);
     animation:marquee-scroll 26s linear infinite;
   }
@@ -357,6 +360,9 @@
   }
   @media (max-width:1088px){
     .marquee-track{padding:2px 24px;}
+  }
+  @media (max-width:560px){
+    .marquee::before, .marquee::after{width:32px;}
   }
 
   .cred-card{
