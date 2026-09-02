@@ -29,7 +29,7 @@ document.getElementById('year').textContent = new Date().getFullYear();
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 /* ---------- typing effect for role line ---------- */
-const roles = ['System Engineer — BFSI, TCS', 'Java / Spring Boot / Spring Batch', 'Docker · Kubernetes · OpenShift', 'Jenkins · Harness pipelines'];
+const roles = ['Backend Software Engineer — TCS', 'Java / Spring Boot / Microservices', 'AWS Certified Solutions Architect', 'Spring Batch · high-throughput pipelines', 'Docker · Kubernetes · OpenShift'];
 const typeEl = document.getElementById('type-role');
 if(!reduceMotion){
   let ri=0, ci=0, deleting=false;
